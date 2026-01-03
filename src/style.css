@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import "tailwindcss";
+
+*{
+      font-family: "Google Sans", sans-serif;
+      
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+.page_wrap {
+    /* flex-flow: column; */
+    /* display: flex; */
+    min-height: 100svh;
+    width: 100vw;
+    
+    overflow: clip
+}
+@media (min-width: 992px) {
+  .marquee {
+    display: flex;
+    overflow: hidden;
+  }
+  .marquee h1 {
+    white-space: nowrap;
+    animation: marquee-horizontal 40s linear infinite;
+  }
+  @keyframes marquee-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
