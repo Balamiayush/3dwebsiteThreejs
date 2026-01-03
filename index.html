@@ -11,57 +11,77 @@
 </head>
 
 <body class="w-full relative overflow-x-clip">
-  <nav class="absolute top-0 left-0 w-full h-[10vh] flex items-left justify-left px-[2vw] py-[2vw] cursor-pointer">
-    <div>
-      <ul class="flex gap-[1vw]">
-        <li>Home</li>
-        <li>Services</li>
-        <li>Portfolio</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
-    </div>
-  </nav>
-  <canvas id="canvas" class="w-full h-full z-[100000] absolute top-0 left-0 pointer-events-none"></canvas>
-  <div
+  <div class="heroSection min-h-screen relative w-full">
+
+    <nav class="absolute top-0 left-0 w-full h-[10vh] flex items-left justify-left px-[4vw] py-[2vw] cursor-pointer">
+      <div>
+        <ul class="flex gap-[1vw]">
+          <li>Home</li>
+          <li>Services</li>
+          <li>Portfolio</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </nav>
+    <canvas id="canvas" class="w-full h-full z-[100] absolute top-0 left-0 pointer-events-none"></canvas>
+    <div
     class="frame pointer-events-none w-full h-screen  flex items-center justify-center fixed inset-0 top-0 left-0 z-[1000000]">
     <img src="./public/Container.png" class="w-full h-full " alt="">
     <div class="absolute bottom-0 flex gap-[1vw] ">
       <p class="text-[0.8vw] text-[#ffff82] ">x : <span id="x"></span></p>
       <p class="text-[0.8vw] text-[#ffff82] ">y : <span id="y"></span></p>
-
-    </div>
-
-  </div>
-  <div class="page_wrap relative ">
-    <div class="home w-full h-screen ">
-      <div class="absolute z-[-1]">
-        <img src="https://assets.unicorn.studio/images/zIbG70fBuWNATNrmetzcKnF1dhs1/image_hero-index-small_bg.webp"
-          class="w-full h-full  object-cover" alt="">
-      </div>
-      <div
-        class="absolute bottom-[1vh] left-1/2 -translate-x-1/2 z-[100000] flex w-full justify-between p-[2vw]  items-center ">
-        <h1 class="text-[5vw] matrix   text-[#000000]">MATRIX</h1>
-        <button class=" text-black bg-[#ffff82]  px-[4vw] rounded-2xl py-[2vh] z-[100000]">Discover</button>
-        <h1 class="text-[5vw] matrix   leading-none text-[#000000]">Creative</h1>
-
-      </div>
-      <div class="marquee absolute flex items-center gap-[2vw] pointer-events-none ">
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw]">Designing the vision. Developing the future</h1>
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future</h1>
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future</h1>
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
-        <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
-      </div>
+      
     </div>
     
   </div>
-  <img class="absolute imgcloud z-[100000] bottom-[-30rem] w-[60%] h-[60%] left-1/2 -translate-x-1/2 " src="https://cdn.prod.website-files.com/675835c7f4ae1fa1a79b3733/680aafe79c8c3c831258f954_b52df6557fde79650e779d51ac62459b_cloud-center.webp" loading="lazy" data-w-id="2099537d-6349-ff3c-9ca4-872923f8e396" data-src="https://cdn.prod.website-files.com/675835c7f4ae1fa1a79b3733/680aafe79c8c3c831258f954_b52df6557fde79650e779d51ac62459b_cloud-center.webp" alt="" draggable="false"/>
-  <div class="page2 w-full h-screen "></div>
+  
+  <div class="w-full h-screen ">
+    <div class="absolute z-[-1]">
+      <img src="https://assets.unicorn.studio/images/zIbG70fBuWNATNrmetzcKnF1dhs1/image_hero-index-small_bg.webp"
+      class="w-full h-full  object-cover" alt="">
+    </div>
+    <div
+    class="absolute bottom-[1vh] left-1/2 -translate-x-1/2 z-[100000] flex w-full justify-between px-[4vw]  items-center ">
+    <h1 class="text-[5vw] matrix   text-[#000000]">MATRIX</h1>
+    <button class=" text-black bg-[#ffff82]  px-[4vw] rounded-2xl py-[2vh] z-[100000]">Discover</button>
+    <h1 class="text-[5vw] matrix   leading-none text-[#000000]">Creative</h1>
+    
+  </div>
+  <div class="marquee absolute flex items-center gap-[2vw] pointer-events-none ">
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw]">Designing the vision. Developing the future</h1>
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future</h1>
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future</h1>
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
+    <h1 class="text-[15vw]  text-nowrap tracking-[.1vw] ">Designing the vision. Developing the future.</h1>
+  </div>
+</div>
+</div>
+
+
+
+  <img class="absolute imgcloud z-[100000] bottom-[-30rem] w-[60%] h-[60%] left-1/2 -translate-x-1/2 "
+    src="https://cdn.prod.website-files.com/675835c7f4ae1fa1a79b3733/680aafe79c8c3c831258f954_b52df6557fde79650e779d51ac62459b_cloud-center.webp"
+    loading="lazy" data-w-id="2099537d-6349-ff3c-9ca4-872923f8e396"
+    data-src="https://cdn.prod.website-files.com/675835c7f4ae1fa1a79b3733/680aafe79c8c3c831258f954_b52df6557fde79650e779d51ac62459b_cloud-center.webp"
+    alt="" draggable="false" />
+
+  <div class="page2 w-full  min-h-screen mt-[5vw] px-[4vw] py-[10vw] relative">
+    <div class="flex items-center  justify-between w-full">
+
+      <h1 class="text-[5vw]  ourMission   text-[#000000]">OUR MISSION</h1>
+      <p class="text-[0.9vw] ourMission leading-none w-1/2">At MATRIX Creative, we are committed to delivering
+        exceptional results for our clients. Our mission is to be a trusted partner in the creative industry, providing
+        innovative solutions that drive success and inspire change.</p>
+    </div>
+    
+    <canvas id="crystal" class="  w-full h-full pointer-events-none  absolute inset-0"></canvas>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/Crystal.js"></script>
 </body>
 <script type="module">
   import Lenis from 'lenis'
@@ -82,26 +102,28 @@
 
   // Disable lag smoothing in GSAP to prevent any delay in scroll animations
   gsap.ticker.lagSmoothing(0);
-let tl = gsap.timeline({
-  yPercent: -60,
+  let tl = gsap.timeline({
+    yPercent: -60,
     ease: "none",
-  scrollTrigger: {
-    trigger: "body",
-    start: "top top",
-    // markers: true,
-    scrub: true
-  }
-}).to(".imgcloud", {
-  yPercent: -100,
-  ease: "none",
-},'a').to(".matrix", {
-  yPercent: -60,
-  ease: "none",
-},'a').to(".page2", {
-  background: "#CFB8FF",
-  ease: "none",
-},'a')
- 
+    scrollTrigger: {
+      trigger: "body",
+      start: "top top",
+      // markers: true,
+      scrub: true
+    }
+  }).to(".imgcloud", {
+    yPercent: -80,
+    ease: "none",
+  }, 'a').to(".matrix", {
+    yPercent: -60,
+    ease: "none",
+  }, 'a').to(".page2", {
+    background: "#CFB8FF",
+    ease: "none",
+  }, 'a').to(".ourMission", {
+    yPercent: -60,
+    ease: "none",
+  }, 'a')
 
 </script>
 

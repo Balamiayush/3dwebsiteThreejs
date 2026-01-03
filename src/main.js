@@ -7,7 +7,7 @@ import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader'
 /* ------------------ BASIC SETUP ------------------ */
 
 const canvas = document.getElementById('canvas')
-
+  
 const scene = new THREE.Scene()
 
 const camera = new THREE.PerspectiveCamera(

@@ -20,7 +20,7 @@ html,body{
     min-height: 100svh;
     width: 100vw;
     
-    overflow: clip
+    /* overflow: clip */
 }
 @media (min-width: 992px) {
   .marquee {
