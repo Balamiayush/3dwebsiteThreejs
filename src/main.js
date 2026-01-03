@@ -61,8 +61,8 @@ gltfLoader.load(
   '/alien_soldier.glb',
   (gltf) => {
     model = gltf.scene
-    model.scale.set(2, 2, 2)
-    model.position.set(0, -0.4, 2.5)
+    model.scale.set(2, 2, 1)
+    model.position.set(0, -0.5, 2.5)
 
     model.traverse((child) => {
       if (child.isMesh) {
