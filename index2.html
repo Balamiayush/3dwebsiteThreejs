@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDR 2 GSAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Instrument Serif', Georgia, serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            padding: 0 60px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item .index {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.3);
+            width: 40px;
+            flex-shrink: 0;
+            font-family: 'Courier New', monospace;
+            transition: color 0.4s ease;
+        }
+
+        .list-item .heading {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 400;
+            font-style: italic;
+            opacity: 0.4;
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(0);
+        }
+
+        .list-item.active .heading {
+            opacity: 1;
+            transform: translateX(24px);
+        }
+
+        .list-item.active .index {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+
+        .preview-image {
+            position: fixed;
+            top: 50%;
+            right: 80px;
+            transform: translateY(-50%);
+            width: 420px;
+            height: 560px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 6px;
+            filter: grayscale(20%);
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @media (max-width: 400px) {
+            .preview-image {
+                top: auto;
+                bottom: 20px;
+                right: 16px;
+                transform: none;
+                width: 140px;
+                height: 180px;
+                border-radius: 4px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .list-item .heading {
+                font-size: 24px;
+            }
+
+            .list-item.active .heading {
+                transform: translateX(12px);
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <img class="preview-image" src="https://i.pinimg.com/1200x/21/56/8d/21568deab265f4f8eaec67c24edf3603.jpg" alt="">
+
+    <div class="container">
+        <div class="list-wrapper">
+            <div class="list">
+                <div class="list-item" data-img="https://i.pinimg.com/1200x/21/56/8d/21568deab265f4f8eaec67c24edf3603.jpg">
+                    <span class="index">01</span>
+                    <div class="heading">Arthur Morgan</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/1200x/af/f1/6a/aff16aae2e723c150b3c75b3e56b0ce9.jpg">
+                    <span class="index">02</span>
+                    <div class="heading">Dutch Van Der Linde</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/736x/c0/61/80/c06180ff2857208bf7709d6825b7909d.jpg">
+                    <span class="index">03</span>
+                    <div class="heading">Charles Smith</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/1200x/6a/bb/07/6abb07dbe98dd5283b64edd7817f0ed2.jpg">
+                    <span class="index">04</span>
+                    <div class="heading">Abigail Marston</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/736x/0f/57/6d/0f576dbec12a4751326e186e0aef6124.jpg">
+                    <span class="index">05</span>
+                    <div class="heading">Tilly Jackson</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/736x/a0/98/1f/a0981f17574da29c87ff3884979439d7.jpg">
+                    <span class="index">06</span>
+                    <div class="heading">Saddie Adler</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/1200x/6b/ff/36/6bff36f12ce1cf43d025450abe374fdb.jpg">
+                    <span class="index">07</span>
+                    <div class="heading">Javier Escuella</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/736x/36/5b/8e/365b8ea3be38210691af02fc74c17362.jpg">
+                    <span class="index">08</span>
+                    <div class="heading">Jack Marston</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/1200x/fa/b5/8e/fab58e0d5e511305ce946e76ab912789.jpg">
+                    <span class="index">09</span>
+                    <div class="heading">Lenny Summers</div>
+                </div>
+                <div class="list-item" data-img="https://i.pinimg.com/1200x/df/69/ee/df69eef013c398464c2ac6846943f75b.jpg">
+                    <span class="index">10</span>
+                    <div class="heading">Karen Jones</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+
+            const lenis = new Lenis();
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            const list = document.querySelector('.list');
+            const listWrapper = document.querySelector('.list-wrapper');
+            const listItems = document.querySelectorAll('.list-item');
+            const container = document.querySelector('.container');
+            const previewImage = document.querySelector('.preview-image');
+
+
+            const itemHeight = listItems[0].offsetHeight + 8;
+            const totalScroll = itemHeight * (listItems.length - 1);
+
+
+            gsap.to(listWrapper, {
+                y: -totalScroll,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top top",
+                    end: "+=" + totalScroll,
+                    pin: true,
+                    scrub: 0.8, 
+                    onUpdate: (self) => {
+                        const activeIndex = Math.round(self.progress * (listItems.length - 1));
+                        listItems.forEach((item, i) => {
+                            item.classList.toggle('active', i === activeIndex);
+                        });
+                        previewImage.src = listItems[activeIndex].dataset.img;
+                    },
+                    onLeave: () => {
+                        gsap.to(previewImage, { opacity: 0, duration: 0.3 });
+                        listItems.forEach((item, i) => {
+                            item.classList.remove('active')
+                        })
+                    },
+                    onEnterBack: () => {
+                        gsap.to(previewImage, { opacity: 1, duration: 0.3 });
+                    }
+                },
+                
+            });
+
+
+        });
+
+    </script>
+</body>
+
+</html>
